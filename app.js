@@ -1,13 +1,6 @@
-let authorEl = document.getElementById("author").value;
-let titleEl = document.getElementById("title").value;
-let pageCountEl = document.getElementById("pageCount").value;
-let haveReadEl = document.getElementById("haveRead").value;
-let libraryList = document.getElementById("libraryList");
 let submit = document.getElementById("submit");
-// document.getElementById("bookSubmit").reset;
 let myLibrary = [];
-let newBook = [];
-// let newDiv
+// document.getElementById("bookSubmit").reset;
 
 function Book(author, title, pageCount, haveRead) {
     this.author = author,
@@ -16,11 +9,7 @@ function Book(author, title, pageCount, haveRead) {
     this.haveRead = haveRead
 };
 
-
-Book.prototype.info = function(){
-    return this.title + " by " + this.author + ", " + this.pageCount + ", " + this.haveRead
-};
-Book.prototype.library = function(){
+function pushLibrary(){
     myLibrary.push([this.author, this.title, this.pageCount, this.haveRead]);
     // newDiv = document.createElement("div");
     // newBook.push(this.author, this.title, this.pageCount, this.haveRead);
@@ -30,27 +19,37 @@ Book.prototype.library = function(){
 
 function addBookToLibrary() {
   // do stuff here
-    titleEl = new Book(authorEl, titleEl, pageCountEl, haveReadEl);
-    const newExample = new Book ("2hi", "2Title", "2Page Count", "2Have Read");
+    let authorEl = document.getElementById("author").value;
+    let titleEl = document.getElementById("title").value;
+    let pageCountEl = document.getElementById("pageCount").value;
+    let haveReadEl = document.getElementById("haveRead").value;
+
+    let theExample = new Book ("hi", "Title", "Page Count", "Have Read");
+    let newBook = new Book( titleEl, authorEl, pageCountEl, haveReadEl);
+    pushLibrary(theExample);
+    pushLibrary(newBook);
 };
 
 
 function displayLibrary(){
+    let libraryList = document.getElementById("libraryList");
     libraryList.textContent = myLibrary;
 };
 
 
-
-const theExample = new Book ("hi", "Title", "Page Count", "Have Read");
-console.log(theExample.info())
-theExample.library();
-newExample.library();
+//     // titleEl = new Book (authorEl, titleEl, pageCountEl, haveReadEl);
+// const theExample = new Book ("hi", "Title", "Page Count", "Have Read");
+// const newExample = new Book ("2hi", "2Title", "2Page Count", "2Have Read"); 
+// // theExample.library();
+// // newExample.library();
+// // titleEl.library();
+// pushLibrary(theExample);
+// pushLibrary(newExample);
+// pushLibrary(titleEl);
 
 console.log(myLibrary);
 addBookToLibrary();
 displayLibrary();
-// console.log(titleEl.author);
-// console.log(newBook);
 
 
 
