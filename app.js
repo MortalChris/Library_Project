@@ -2,58 +2,39 @@ let submit = document.getElementById("submit");
 let myLibrary = [];
 // document.getElementById("bookSubmit").reset;
 
-function Book(author, title, pageCount, haveRead) {
+function Book(author, title, pageCount, haveRead) {//Constrctor function
     this.author = author,
     this.title = title,
     this.pageCount = pageCount,
     this.haveRead = haveRead
 };
 
-function pushLibrary(){
-    myLibrary.push([this.author, this.title, this.pageCount, this.haveRead]);
-    // newDiv = document.createElement("div");
-    // newBook.push(this.author, this.title, this.pageCount, this.haveRead);
-    // let newlibrary = myLibrary.concat([newBook]);
+function pushLibrary(parameter){//takes an object and pushes it to library
+    myLibrary.push([parameter]);
+    console.log(myLibrary);
 };
 
 
-function addBookToLibrary() {
-  // do stuff here
+function addBookToLibrary() {//Adds html inputs to a new object 
     let authorEl = document.getElementById("author").value;
     let titleEl = document.getElementById("title").value;
     let pageCountEl = document.getElementById("pageCount").value;
     let haveReadEl = document.getElementById("haveRead").value;
-
-    let theExample = new Book ("hi", "Title", "Page Count", "Have Read");
-    let newBook = new Book( titleEl, authorEl, pageCountEl, haveReadEl);
-    pushLibrary(theExample);
+    let newBook = new Book(authorEl, titleEl, pageCountEl, haveReadEl);
+    console.log(newBook);
     pushLibrary(newBook);
 };
 
 
-function displayLibrary(){
+function displayLibrary(){//Puts library array into text onscreen
     let libraryList = document.getElementById("libraryList");
-    libraryList.textContent = myLibrary;
+    libraryList.textContent = JSON.stringify(myLibrary);
 };
 
 
-//     // titleEl = new Book (authorEl, titleEl, pageCountEl, haveReadEl);
-// const theExample = new Book ("hi", "Title", "Page Count", "Have Read");
-// const newExample = new Book ("2hi", "2Title", "2Page Count", "2Have Read"); 
-// // theExample.library();
-// // newExample.library();
-// // titleEl.library();
-// pushLibrary(theExample);
-// pushLibrary(newExample);
-// pushLibrary(titleEl);
 
-console.log(myLibrary);
-addBookToLibrary();
-displayLibrary();
-
-
-
-// var arr = [0];
-// var elem = [1, 2, 3];
-// var newArr = arr.concat([elem]);
-// console.log(newArr); // => [0,[1,2,3]]
+function start(){//Begins process
+    addBookToLibrary();
+    displayLibrary();
+    return false;
+};
