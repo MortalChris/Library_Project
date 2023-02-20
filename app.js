@@ -27,37 +27,32 @@ function addBookToLibrary() {//Adds html inputs to a new object
 };
 
 
-function displayLibrary(){//Puts library array into text onscreen
+function displayLibrary() {//Puts newest library element into text onscreen
     let libraryList = document.getElementById("libraryList");
-    for (let i = 0; i < myLibrary.length; i += 1) {
+    const i = myLibrary.length - 1;
 
-        //Create div to house library list elements in html
-        const bookDiv = document.createElement("div");
-            bookDiv.classList.add('book-container');
-            bookDiv.setAttribute('data-index', i);//IDK whats the purpose of this
-        //Create author paragraph html element
-        const authorP = document.createElement("p");
-            authorP.textContent = myLibrary[i].author;
-            bookDiv.appendChild(authorP);
-        //Create title paragraph html element
-        const titleP = document.createElement("p");
-            titleP.textContent = myLibrary[i].title;
-            bookDiv.appendChild(titleP);
-        //Create page count paragraph html element
-        const pageCountP = document.createElement("p");
-            pageCountP.textContent = myLibrary[i].pageCount;
-            bookDiv.appendChild(pageCountP);
-         //Create have read paragraph html element
-        const haveReadP = document.createElement("p");
-            haveReadP.textContent = myLibrary[i].haveRead;
-            bookDiv.appendChild(haveReadP);
+    //Create div to house library list elements in html
+    const bookDiv = document.createElement("div");
+        bookDiv.classList.add('book-container');
+        bookDiv.setAttribute('data-index', i);//IDK whats the purpose of this
+    //Create author paragraph html element
+    const authorP = document.createElement("p");
+        authorP.textContent = myLibrary[i].author;
+        bookDiv.appendChild(authorP);
+    //Create title paragraph html element
+    const titleP = document.createElement("p");
+        titleP.textContent = myLibrary[i].title;
+        bookDiv.appendChild(titleP);
+    //Create page count paragraph html element
+    const pageCountP = document.createElement("p");
+        pageCountP.textContent = myLibrary[i].pageCount;
+        bookDiv.appendChild(pageCountP);
+     //Create have read paragraph html element
+    const haveReadP = document.createElement("p");
+        haveReadP.textContent = myLibrary[i].haveRead;
+        bookDiv.appendChild(haveReadP);
 
-        // const testP = document.createElement("p");
-        //     testP.textContent = myLibrary[0].haveRead;
-        //     bookDiv.appendChild(testP);
-        libraryList.appendChild(bookDiv);
-    };
-    console.log(myLibrary[0].haveRead);
+    libraryList.appendChild(bookDiv);
 };
 
 
