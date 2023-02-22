@@ -64,17 +64,25 @@ border-radius: 3rem;
 
 /*Place where book details are stored*/
 #bookSelf{
-    display: flex;
+    /* display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	align-content: space-evenly;
+	align-content: space-evenly; */
+
+
+    /* display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+     */
 }
 .book-container{
     border-radius: 1rem;
     background-color: #1970B5;
     color: #F89C19;
     padding: 3rem;
-    margin: 1rem;
 }
