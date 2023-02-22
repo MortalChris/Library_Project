@@ -59,11 +59,14 @@ function displayLibrary() {//Puts newest library element into text onscreen
 const bookSubmit = document.getElementById("bookSubmit");
 const openForm = document.getElementById("openForm");
 const closeForm = document.getElementById("closeForm");
+const modal = document.querySelector(".modal");
 openForm.addEventListener("click", function(){
-    document.getElementById("bookSubmit").style.display = "block";
+    // document.getElementById("bookSubmit").style.display = "block";
+    modal.showModal();
 });
 closeForm.addEventListener("click", function(){
-    document.getElementById("bookSubmit").style.display = "none";
+    // document.getElementById("bookSubmit").style.display = "none";
+    modal.close();
 });
 
 function start(){//Begins process

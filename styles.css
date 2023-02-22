@@ -1,24 +1,42 @@
 *{
-    margin: 0;
-    padding: 0;
-    color: blueviolet;
+    margin: 0rem;
+    padding: 0rem;
+    color: #F89C19;
 }
 body{
-    margin: auto;
-    background-color: #0A2028;
+    background-color: #1FBD9D;
+    /* margin: auto;
     display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 }
 /* Main container */
 #container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr; 
 }
 /* Form */
+#forms{
+    
+}
 #bookSubmit{
-    display: none;
+    /* display: none; */
+}
+#libraryList{
+    /* background-color: #1970B5; */
+    text-align: center;
+}
+#libList-1st-child{
+    font-size: 5rem;
+}
+/*Open form btn*/
+#openForm{
+    color: #1970B5;
+    padding: 2rem;
+    background-color: #F89C19;
+    border: .5rem solid #1970B5;
+    border-radius: 3rem;
 }
 /* #bookSubmit{
     margin: 2rem;

@@ -9,7 +9,11 @@
 </head>
 <body>
     <div id="container">
-        <div id="forms">
+        <div id="libraryList">
+            <h2 id="libList-1st-child">My library</h2>
+            <button id="openForm">Add a New Book</button>
+        </div>
+        <dialog class="modal" id="forms">
             <form id="bookSubmit" onsubmit="return start()">
                 <div class="form-input-containers">
                     <label for="author">Author:</label><br>
@@ -32,11 +36,7 @@
                     <input id="closeForm" type="button" value="Close form"></input>
                 </div>
             </form>
-        </div>
-        <div id="libraryList">
-            <h2>Library List: </h2>
-            <button id="openForm">Open form</button>
-        </div>
+        </dialog>
     </div>
 </body>
 <script src="app.js"></script>
