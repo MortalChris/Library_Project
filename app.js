@@ -1,5 +1,6 @@
 let submit = document.getElementById("submit");
 let myLibrary = [];
+
 // document.getElementById("bookSubmit").reset;
 
 function Book(author, title, pageCount, haveRead) {//Constrctor function
@@ -29,6 +30,7 @@ function addBookToLibrary() {//Adds html inputs to a new object
 
 function displayLibrary() {//Puts newest library element into text onscreen
     let libraryList = document.getElementById("libraryList");
+    const bookSelf = document.getElementById("bookSelf");
     const i = myLibrary.length - 1;
 
     //Create div to house library list elements in html
@@ -52,11 +54,10 @@ function displayLibrary() {//Puts newest library element into text onscreen
         haveReadP.textContent = myLibrary[i].haveRead;
         bookDiv.appendChild(haveReadP);
 
-    libraryList.appendChild(bookDiv);
+        bookSelf.appendChild(bookDiv);
 };
 
 //Open and Close form
-const bookSubmit = document.getElementById("bookSubmit");
 const openForm = document.getElementById("openForm");
 const closeForm = document.getElementById("closeForm");
 const modal = document.querySelector(".modal");
@@ -64,10 +65,16 @@ openForm.addEventListener("click", function(){
     // document.getElementById("bookSubmit").style.display = "block";
     modal.showModal();
 });
+submit.addEventListener("click", function(){
+    // document.getElementById("bookSubmit").style.display = "none";
+    modal.close();
+});
 closeForm.addEventListener("click", function(){
     // document.getElementById("bookSubmit").style.display = "none";
     modal.close();
 });
+
+
 
 function start(){//Begins process
     addBookToLibrary();
