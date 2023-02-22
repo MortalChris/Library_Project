@@ -55,7 +55,16 @@ function displayLibrary() {//Puts newest library element into text onscreen
     libraryList.appendChild(bookDiv);
 };
 
-
+//Open and Close form
+const bookSubmit = document.getElementById("bookSubmit");
+const openForm = document.getElementById("openForm");
+const closeForm = document.getElementById("closeForm");
+openForm.addEventListener("click", function(){
+    document.getElementById("bookSubmit").style.display = "block";
+});
+closeForm.addEventListener("click", function(){
+    document.getElementById("bookSubmit").style.display = "none";
+});
 
 function start(){//Begins process
     addBookToLibrary();
