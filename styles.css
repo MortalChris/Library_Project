@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root{
+    --primary-clr: #F89C19;
+    --secondary-clr: #1970B5;
+    --tertiary-clr: ##14AE9E
+}
 *{
     margin: 0rem;
     padding: 0rem;
@@ -11,7 +16,7 @@ body{
 
 /*Library Elements*/
 #libraryList{
-    color: #F89C19;
+    color: var(--primary-clr);
     text-align: center;
 }
 #libList-1st-child{
@@ -19,12 +24,12 @@ body{
 }
 /*Open form btn*/
 #openForm{
-font-size: 2rem;
-color: #1970B5;
-padding: 2rem;
-background-color: #F89C19;
-border: .5rem solid #1970B5;
-border-radius: 3rem;
+    font-size: 2rem;
+    color: var( --secondary-clr);
+    padding: 2rem; 
+    background-color: var(--primary-clr);
+    border: .5rem solid var( --secondary-clr);
+    border-radius: 3rem; 
 }
 
 
@@ -32,8 +37,8 @@ border-radius: 3rem;
     .modal{
         margin: auto;
         padding: 1rem 2rem 1rem 2rem;
-        color: #F89C19;
-        background-color: #1970B5;
+        color: var(--primary-clr);
+        background-color: var( --secondary-clr);
         border-radius: 3rem;
     }
     .modal::backdrop{
@@ -52,10 +57,10 @@ border-radius: 3rem;
     }
     /*Form buttons*/
     .buttons{
-        color: #1970B5;
+        color: var(--secondary-clr);
         padding: .5rem;
         border-radius: 1rem;
-        background-color: #F89C19;
+        background-color: var(--primary-clr);
         border: none;
     }
     
@@ -64,25 +69,27 @@ border-radius: 3rem;
 
 /*Place where book details are stored*/
 #bookSelf{
-    /* display: flex;
+	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: space-evenly; */
-
-
-    /* display: flex;
-	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
-     */
+	justify-content: center;
+	align-content: stretch; 
+    margin: 3rem;
 }
-.book-container{
-    border-radius: 1rem;
-    background-color: #1970B5;
-    color: #F89C19;
-    padding: 3rem;
+#book-self-table{
+    border-collapse: collapse;
+    border: .5rem solid var( --secondary-clr);
+    width: 90%;
+}
+#book-self-table th{
+    color: var(--primary-clr);
+    font-size: 3rem;
+    background-color: var( --secondary-clr);
+}
+#book-self-table td{
+    text-align: center;
+    background-color: var(--tertiary-clr);
+    color: #1970B5;
+    font-size: 2rem;
+    /* padding: 0rem 6rem 0rem 6rem; */
 }

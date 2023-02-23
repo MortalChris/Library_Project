@@ -31,30 +31,31 @@ function addBookToLibrary() {//Adds html inputs to a new object
 function displayLibrary() {//Puts newest library element into text onscreen
     let libraryList = document.getElementById("libraryList");
     const bookSelf = document.getElementById("bookSelf");
+    const bookSelftTable = document.getElementById("book-self-table");
     const i = myLibrary.length - 1;
 
     //Create div to house library list elements in html
-    const bookDiv = document.createElement("div");
+    const bookDiv = document.createElement("tr");
         bookDiv.classList.add('book-container');
         bookDiv.setAttribute('data-index', i);//IDK whats the purpose of this
     //Create author paragraph html element
-    const authorP = document.createElement("p");
+    const authorP = document.createElement("td");
         authorP.textContent = myLibrary[i].author;
         bookDiv.appendChild(authorP);
     //Create title paragraph html element
-    const titleP = document.createElement("p");
+    const titleP = document.createElement("td");
         titleP.textContent = myLibrary[i].title;
         bookDiv.appendChild(titleP);
     //Create page count paragraph html element
-    const pageCountP = document.createElement("p");
+    const pageCountP = document.createElement("td");
         pageCountP.textContent = myLibrary[i].pageCount;
         bookDiv.appendChild(pageCountP);
      //Create have read paragraph html element
-    const haveReadP = document.createElement("p");
+    const haveReadP = document.createElement("td");
         haveReadP.textContent = myLibrary[i].haveRead;
         bookDiv.appendChild(haveReadP);
 
-        bookSelf.appendChild(bookDiv);
+        bookSelftTable.appendChild(bookDiv);
 };
 
 //Open and Close form
