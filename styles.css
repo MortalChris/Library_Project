@@ -2,7 +2,14 @@
 :root{
     --primary-clr: #F89C19;
     --secondary-clr: #1970B5;
-    --tertiary-clr: ##14AE9E
+    --tertiary-clr: ##14AE9E;
+
+    --btn-hover-clr: #EE5356;
+    /* EE5356
+    F89C19
+    1970B5
+    1FBD9D
+    12A494 */
 }
 *{
     margin: 0rem;
@@ -20,18 +27,22 @@ body{
     text-align: center;
 }
 #libList-1st-child{
+    margin-top: 1rem;
     font-size: 5rem;
 }
-/*Open form btn*/
+/*Add new book button*/
 #openForm{
     font-size: 2rem;
-    color: var( --secondary-clr);
     padding: 2rem; 
+    color: var( --secondary-clr);
     background-color: var(--primary-clr);
     border: .5rem solid var( --secondary-clr);
     border-radius: 3rem; 
+    transition-duration: 0.4s;
 }
-
+#openForm:hover{
+    background-color: var(--btn-hover-clr);
+}
 
 /* Form div*/
     .modal{
@@ -55,6 +66,10 @@ body{
     .form-input-containers .buttons{
         font-size: 1rem;
     }
+    /* Have read portion of form */
+    #haveRead{
+        width: 95%;
+    }
     /*Form buttons*/
     .buttons{
         color: var(--secondary-clr);
@@ -62,8 +77,11 @@ body{
         border-radius: 1rem;
         background-color: var(--primary-clr);
         border: none;
+        transition-duration: 0.4s;
     }
-    
+    .buttons:hover{
+        background-color: var(--btn-hover-clr);
+    }
 
 
 
@@ -91,5 +109,4 @@ body{
     background-color: var(--tertiary-clr);
     color: #1970B5;
     font-size: 2rem;
-    /* padding: 0rem 6rem 0rem 6rem; */
 }

@@ -11,7 +11,7 @@
     <div id="container">
         <div id="libraryList">
             <h2 id="libList-1st-child">My library</h2>
-            <button id="openForm">Add a New Book</button>
+            <button class="buttons" id="openForm">Add a New Book</button>
         </div>
         <dialog class="modal" id="forms">
             <form id="bookSubmit" onsubmit="return start()">
@@ -28,8 +28,13 @@
                     <input type="number" id="pageCount" name="pageCount" ><br><br>
                 </div>
                 <div class="form-input-containers">
-                    <label for="haveRead">Book Read:</label><br>
-                    <input type="text" id="haveRead" name="haveRead" ><br><br>
+                    <label for="haveRead">Book Read:</label><br> 
+                    <select name="bookRead" id="haveRead">
+                        <option value="">--Choose an option--</option>
+                        <option value="Not Read">Not Read</option>
+                        <option value="Have Read">Have Read</option>
+                    </select><br><br><br> 
+                    <!-- <input type="text" id="haveRead" name="haveRead" ><br><br> -->
                 </div>
                 <div class="form-input-containers">
                     <input id="submit" type="submit" value="Submit" class="buttons">
