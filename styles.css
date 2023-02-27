@@ -82,7 +82,14 @@ body{
     .buttons:hover{
         background-color: var(--btn-hover-clr);
     }
-
+    img{
+        
+        max-width: 25%;
+        height: 25%;
+    }
+        #deleteIcon{
+            width: 15%;
+        }
 
 
 /*Place where book details are stored*/

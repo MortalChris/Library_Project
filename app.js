@@ -54,6 +54,13 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const haveReadP = document.createElement("td");
         haveReadP.textContent = myLibrary[i].haveRead;
         bookDiv.appendChild(haveReadP);
+    //Creates the delete button
+    const img = document.createElement("img");
+        const imgTd = document.createElement("td");
+        imgTd.setAttribute("id", "deleteIcon");
+        bookDiv.appendChild(imgTd);
+        img.src = "https://cdn-icons-png.flaticon.com/512/3686/3686905.png";
+        imgTd.appendChild(img);
 
         bookSelftTable.appendChild(bookDiv);
 };
