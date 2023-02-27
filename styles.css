@@ -95,6 +95,9 @@ body{
     img:hover{
         transform: scale(1.5);
     }
+    #deleteBtn{
+        padding-right: .5rem
+    }
 
 
 /*Place where book details are stored*/
