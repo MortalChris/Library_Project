@@ -72,6 +72,7 @@ function displayLibrary() {//Puts newest library element into text onscreen
         imgTd.appendChild(img);
             //Allows delete
             img.addEventListener("click", function(){
+                // myLibrary.shift(i); im trying to remove the object from array
                 bookDiv.remove(i);
             });
     //Creat edit icon
