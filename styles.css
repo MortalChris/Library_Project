@@ -82,18 +82,19 @@ body{
     .buttons:hover{
         background-color: var(--btn-hover-clr);
     }
-    img{
+    /*Icons edit and delete*/
+    #buttonIcons{
+        width: 15%;
+    }
+    img{ /*For both icons*/
         padding-top: .8rem;
         max-width: 25%;
         height: 25%;
         cursor:pointer
     }
-        #deleteIcon{
-            width: 15%;
-        }
-        #deleteIcon:hover{
-            background-color: var(--btn-hover-clr);
-        }
+    img:hover{
+        transform: scale(1.5);
+    }
 
 
 /*Place where book details are stored*/

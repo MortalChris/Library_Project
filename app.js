@@ -38,7 +38,6 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const bookDiv = document.createElement("tr");
         bookDiv.classList.add('book-container');
         bookDiv.setAttribute('data-index', i);//IDK whats the purpose of this
-        bookDiv.setAttribute('value', i);
     //Create author paragraph html element
     const authorP = document.createElement("td");
         authorP.textContent = myLibrary[i].author;
@@ -65,8 +64,9 @@ function displayLibrary() {//Puts newest library element into text onscreen
             });
     //Creates the delete button
     const img = document.createElement("img");
+        img.setAttribute('id', "deleteBtn")
         const imgTd = document.createElement("td");
-        imgTd.setAttribute("id", "deleteIcon");
+        imgTd.setAttribute("id", "buttonIcons");
         bookDiv.appendChild(imgTd);
         img.src = "https://cdn-icons-png.flaticon.com/512/3686/3686905.png";
         imgTd.appendChild(img);
@@ -74,6 +74,16 @@ function displayLibrary() {//Puts newest library element into text onscreen
             img.addEventListener("click", function(){
                 bookDiv.remove(i);
             });
+    //Creat edit icon
+    const editImg = document.createElement("img");
+            editImg.setAttribute("id", "editIcon");
+            imgTd.appendChild(editImg);
+            editImg.src = "https://cdn-icons-png.flaticon.com/512/9794/9794055.png";
+            //Allows 
+            editImg.addEventListener("click", function(){
+                //Edits stuff
+            });
+
         bookSelftTable.appendChild(bookDiv);
 };
 
