@@ -2,7 +2,7 @@
 :root{
     --primary-clr: #F89C19;
     --secondary-clr: #1970B5;
-    --tertiary-clr: ##14AE9E;
+    --tertiary-clr: #14AE9E;
 
     --btn-hover-clr: #EE5356;
     /* EE5356
@@ -83,12 +83,16 @@ body{
         background-color: var(--btn-hover-clr);
     }
     img{
-        
+        padding-top: .8rem;
         max-width: 25%;
         height: 25%;
+        cursor:pointer
     }
         #deleteIcon{
             width: 15%;
+        }
+        #deleteIcon:hover{
+            background-color: var(--btn-hover-clr);
         }
 
 

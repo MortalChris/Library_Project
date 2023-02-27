@@ -30,7 +30,7 @@ function addBookToLibrary() {//Adds html inputs to a new object
 
 function displayLibrary() {//Puts newest library element into text onscreen
     let libraryList = document.getElementById("libraryList");
-    const bookSelf = document.getElementById("bookSelf");
+    // const bookSelf = document.getElementById("bookSelf");
     const bookSelftTable = document.getElementById("book-self-table");
     const i = myLibrary.length - 1;
 
@@ -38,6 +38,7 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const bookDiv = document.createElement("tr");
         bookDiv.classList.add('book-container');
         bookDiv.setAttribute('data-index', i);//IDK whats the purpose of this
+        bookDiv.setAttribute('value', i);
     //Create author paragraph html element
     const authorP = document.createElement("td");
         authorP.textContent = myLibrary[i].author;
@@ -54,6 +55,14 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const haveReadP = document.createElement("td");
         haveReadP.textContent = myLibrary[i].haveRead;
         bookDiv.appendChild(haveReadP);
+            //Allows haveRead to switch between read and haveRead
+            haveReadP.addEventListener("click", function(){              //This works but it doesnt change the actually object in the array just the text
+                if (haveReadP.textContent == "Not Read"){
+                    haveReadP.textContent = "Have Read";
+                } else{
+                    haveReadP.textContent = "Not Read";
+                }
+            });
     //Creates the delete button
     const img = document.createElement("img");
         const imgTd = document.createElement("td");
@@ -61,7 +70,10 @@ function displayLibrary() {//Puts newest library element into text onscreen
         bookDiv.appendChild(imgTd);
         img.src = "https://cdn-icons-png.flaticon.com/512/3686/3686905.png";
         imgTd.appendChild(img);
-
+            //Allows delete
+            img.addEventListener("click", function(){
+                bookDiv.remove(i);
+            });
         bookSelftTable.appendChild(bookDiv);
 };
 
