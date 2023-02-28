@@ -1,8 +1,6 @@
 let submit = document.getElementById("submit");
 let myLibrary = [];
 
-// document.getElementById("bookSubmit").reset;
-
 function Book(author, title, pageCount, haveRead) {//Constrctor function
     this.author = author,
     this.title = title,
@@ -54,14 +52,14 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const haveReadP = document.createElement("td");
         haveReadP.textContent = myLibrary[i].haveRead;
         bookDiv.appendChild(haveReadP);
-            //Allows haveRead to switch between read and haveRead
-            haveReadP.addEventListener("click", function(){              //This works but it doesnt change the actually object in the array just the text
-                if (haveReadP.textContent == "Not Read"){
-                    haveReadP.textContent = "Have Read";
-                } else{
-                    haveReadP.textContent = "Not Read";
-                }
-            });
+        //Allows haveRead to switch between read and haveRead
+        haveReadP.addEventListener("click", function(){              //This works but it doesnt change the actually object in the array just the text
+            if (haveReadP.textContent == "Not Read"){
+                haveReadP.textContent = "Have Read";
+            } else{
+                haveReadP.textContent = "Not Read";
+            }
+        });
     //Creates the delete button
     const img = document.createElement("img");
         img.setAttribute('id', "deleteBtn")
@@ -70,40 +68,42 @@ function displayLibrary() {//Puts newest library element into text onscreen
         bookDiv.appendChild(imgTd);
         img.src = "https://cdn-icons-png.flaticon.com/512/3686/3686905.png";
         imgTd.appendChild(img);
-            //Allows delete
-            img.addEventListener("click", function(){
-                // myLibrary.shift(i); im trying to remove the object from array
-                bookDiv.remove(i);
-            });
+        //Allows delete
+        img.addEventListener("click", function(){
+            // myLibrary.shift(i); im trying to remove the object from array
+            bookDiv.remove(i);
+        });
     //Creat edit icon
     const editImg = document.createElement("img");
-            editImg.setAttribute("id", "editIcon");
-            imgTd.appendChild(editImg);
-            editImg.src = "https://cdn-icons-png.flaticon.com/512/9794/9794055.png";
-            //Allows 
-            editImg.addEventListener("click", function(){
-                //Edits stuff
-            });
+        editImg.setAttribute("id", "editIcon");
+        imgTd.appendChild(editImg);
+        editImg.src = "https://cdn-icons-png.flaticon.com/512/9794/9794055.png";
+        //Allows 
+        editImg.addEventListener("click", function(){
+            //Edits stuff
+        });
+
 
         bookSelftTable.appendChild(bookDiv);
 };
 
+
 //Open and Close form
-const openForm = document.getElementById("openForm");
-const closeForm = document.getElementById("closeForm");
-const modal = document.querySelector(".modal");
-openForm.addEventListener("click", function(){
-    // document.getElementById("bookSubmit").style.display = "block";
-    modal.showModal();
-});
-submit.addEventListener("click", function(){
-    // document.getElementById("bookSubmit").style.display = "none";
-    modal.close();
-});
-closeForm.addEventListener("click", function(){
-    // document.getElementById("bookSubmit").style.display = "none";
-    modal.close();
-});
+    const openForm = document.getElementById("openForm");
+    const closeForm = document.getElementById("closeForm");
+    const modal = document.querySelector(".modal");
+    openForm.addEventListener("click", function(){
+        // document.getElementById("bookSubmit").style.display = "block";
+        modal.showModal();
+    });
+    submit.addEventListener("click", function(){
+        document.getElementById("bookSelf").style.display = "flex";
+        modal.close();
+    });
+    closeForm.addEventListener("click", function(){
+        // document.getElementById("bookSubmit").style.display = "none";
+        modal.close();
+    });
 
 
 

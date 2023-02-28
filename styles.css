@@ -28,7 +28,7 @@ body{
 }
 #libList-1st-child{
     margin-top: 1rem;
-    font-size: 5rem;
+    font-size: 7rem;
 }
 /*Add new book button*/
 #openForm{
@@ -96,7 +96,7 @@ body{
         transform: scale(1.5);
     }
     #deleteBtn{
-        padding-right: .5rem
+        padding-right: .9em
     }
 
 
@@ -108,20 +108,40 @@ body{
 	justify-content: center;
 	align-content: stretch; 
     margin: 3rem;
+    display: none;
 }
 #book-self-table{
     border-collapse: collapse;
-    border: .5rem solid var( --secondary-clr);
+    border: .5rem solid var(--secondary-clr);
     width: 90%;
 }
 #book-self-table th{
     color: var(--primary-clr);
     font-size: 3rem;
-    background-color: var( --secondary-clr);
+    background-color: var(--secondary-clr);
 }
 #book-self-table td{
     text-align: center;
     background-color: var(--tertiary-clr);
     color: #1970B5;
+    font-size: 2rem;
+}
+
+#description-container{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+#description-heading{
+    color: var(--primary-clr);
+    font-size: 4rem;
+}
+#description{
+    color: var(--secondary-clr);
     font-size: 2rem;
 }
