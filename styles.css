@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root{
-    --primary-clr: #F89C19;
-    --secondary-clr: #1970B5;
-    --tertiary-clr: #14AE9E;
+    --primary-clr: #912F40;
+    --secondary-clr: #C89B7B;
+    --tertiary-clr: #40434E;
 
-    --btn-hover-clr: #EE5356;
+    --btn-hover-clr: #702632;
     /* EE5356
     F89C19
     1970B5
@@ -17,7 +17,7 @@
     font-family: 'Bebas Neue', cursive;
 }
 body{
-    background-color: #1FBD9D;
+    background-color: var(--tertiary-clr);
 }
 
 
