@@ -1,4 +1,5 @@
 let submit = document.getElementById("submit");
+let submitEdit = document.getElementById("submitEdit");
 let myLibrary = [];
 
 function Book(author, title, pageCount, haveRead) {//Constrctor function
@@ -10,7 +11,6 @@ function Book(author, title, pageCount, haveRead) {//Constrctor function
 
 function pushLibrary(parameter){//takes an object and pushes it to library
     myLibrary.push(parameter);
-    console.log(myLibrary);
 };
 
 
@@ -23,7 +23,6 @@ function addBookToLibrary() {//Adds html inputs to a new object
 //Need to check if there are multiple of the same book
     console.log(newBook);
     pushLibrary(newBook);
-    return newBook;
 };
 let myNewBook = addBookToLibrary();
 
@@ -54,12 +53,15 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const haveReadP = document.createElement("td");
         haveReadP.textContent = myLibrary[i].haveRead;
         bookDiv.appendChild(haveReadP);
+
         //Allows haveRead to switch between read and haveRead
-        haveReadP.addEventListener("click", function(){              //This works but it doesnt change the actually object in the array just the text
+        haveReadP.addEventListener("click", function(){   
             if (haveReadP.textContent == "Not Read"){
                 haveReadP.textContent = "Have Read";
+                myLibrary[i].haveRead = haveReadP.textContent;
             } else{
                 haveReadP.textContent = "Not Read";
+                myLibrary[i].haveRead = haveReadP.textContent;
             }
         });
 
@@ -85,7 +87,8 @@ function displayLibrary() {//Puts newest library element into text onscreen
         editImg.addEventListener("click", function(){
             //Opens modal
             modal.showModal();
-
+            submit.style.display = "none";
+            submitEdit.style.display = "initial";
             // Populate the form fields with the book's data
             document.getElementById("author").value = myLibrary[i].author;
             document.getElementById("title").value = myLibrary[i].title;
@@ -93,25 +96,25 @@ function displayLibrary() {//Puts newest library element into text onscreen
             document.getElementById("haveRead").value = myLibrary[i].haveRead;
 
              // Update the book in the library when the form is submitted
-            submit.addEventListener("click", function () {
+            submitEdit.addEventListener("click", function () {
                 myLibrary[i].author = document.getElementById("author").value;
                 myLibrary[i].title = document.getElementById("title").value;
                 myLibrary[i].pageCount = document.getElementById("pageCount").value;
                 myLibrary[i].haveRead = document.getElementById("haveRead").value;
                 // Update the book's data in the table
-            authorP.textContent = myLibrary[i].author;
-            titleP.textContent = myLibrary[i].title;
-            pageCountP.textContent = myLibrary[i].pageCount;
-            haveReadP.textContent = myLibrary[i].haveRead;
+                authorP.textContent = myLibrary[i].author;
+                titleP.textContent = myLibrary[i].title;
+                pageCountP.textContent = myLibrary[i].pageCount;
+                haveReadP.textContent = myLibrary[i].haveRead;
 
-            modal.close();
+                submit.style.display = "initial";
+                submitEdit.style.display = "none";
+                modal.close();
+            });
+        console.log(myLibrary);
         });
 
-            // myLibrary.splice(i, 1, myNewBook); //Trying to make this edit button work
-            console.log(myLibrary);
-        });
-
-
+        
         bookSelftTable.appendChild(bookDiv);
 };
 

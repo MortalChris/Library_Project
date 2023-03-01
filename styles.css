@@ -3,7 +3,6 @@
     --primary-clr: #912F40;
     --secondary-clr: #C89B7B;
     --tertiary-clr: #40434E;
-
     --btn-hover-clr: #702632;
     /*https://coolors.co/080705-40434e-702632-912f40-fffffa*/
 }
@@ -52,6 +51,7 @@ body{
         background-color: black;
         opacity: .3;
     }
+
     /*Form*/
     #bookSubmit{
         color: white;
@@ -66,6 +66,7 @@ body{
     #haveRead{
         width: 95%;
     }
+
     /*Form buttons*/
     .buttons{
         color: var(--secondary-clr);
@@ -78,6 +79,10 @@ body{
     .buttons:hover{
         background-color: var(--btn-hover-clr);
     }
+    #submitEdit{ /*This is the button for the seperate edit buttons*/
+        display: none;
+    }
+
     /*Icons edit and delete*/
     #buttonIcons{
         width: 15%;
