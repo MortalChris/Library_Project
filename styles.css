@@ -43,8 +43,8 @@ body{
     .modal{
         margin: auto;
         padding: 1rem 2rem 1rem 2rem;
-        color: var(--primary-clr);
-        background-color: var( --secondary-clr);
+        border: .4rem solid var(--primary-clr);
+        background-color: var(--secondary-clr);
         border-radius: 3rem;
     }
     .modal::backdrop{
@@ -66,7 +66,10 @@ body{
     #haveRead{
         width: 95%;
     }
-
+    .form-input{
+        border-radius: 2rem;
+        text-align: center;
+    }
     /*Form buttons*/
     .buttons{
         color: var(--secondary-clr);
