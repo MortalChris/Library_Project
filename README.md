@@ -2,7 +2,7 @@
 
 https://htmlpreview.github.io/?https://github.com/MortalChris/Library_Project/blob/master/index.html
 
-<a href="![image](https://user-images.githubusercontent.com/88056810/222278127-bcecbe0c-ade0-4600-99ed-d7c10ed8cd98.png)"></a>
+<a href="https://user-images.githubusercontent.com/88056810/222278127-bcecbe0c-ade0-4600-99ed-d7c10ed8cd98.png"></a>
 
 # Library Project
 
