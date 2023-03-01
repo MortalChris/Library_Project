@@ -5,11 +5,7 @@
     --tertiary-clr: #40434E;
 
     --btn-hover-clr: #702632;
-    /* EE5356
-    F89C19
-    1970B5
-    1FBD9D
-    12A494 */
+    /*https://coolors.co/080705-40434e-702632-912f40-fffffa*/
 }
 *{
     margin: 0rem;
@@ -123,10 +119,12 @@ body{
 #book-self-table td{
     text-align: center;
     background-color: var(--tertiary-clr);
-    color: #1970B5;
+    color: var(--primary-clr);
     font-size: 2rem;
 }
 
+
+/* Website description */
 #description-container{
     display: flex;
 	flex-direction: column;

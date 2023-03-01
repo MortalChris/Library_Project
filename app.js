@@ -19,11 +19,13 @@ function addBookToLibrary() {//Adds html inputs to a new object
     let titleEl = document.getElementById("title").value;
     let pageCountEl = document.getElementById("pageCount").value;
     let haveReadEl = document.getElementById("haveRead").value;
-    // let increment = increment + 1;                            <-------Was trying to find way to increment/differentiate names of new bjects
     let newBook = new Book(authorEl, titleEl, pageCountEl, haveReadEl);
+//Need to check if there are multiple of the same book
     console.log(newBook);
     pushLibrary(newBook);
+    return newBook;
 };
+let myNewBook = addBookToLibrary();
 
 
 function displayLibrary() {//Puts newest library element into text onscreen
@@ -60,6 +62,7 @@ function displayLibrary() {//Puts newest library element into text onscreen
                 haveReadP.textContent = "Not Read";
             }
         });
+
     //Creates the delete button
     const img = document.createElement("img");
         img.setAttribute('id', "deleteBtn")
@@ -73,14 +76,39 @@ function displayLibrary() {//Puts newest library element into text onscreen
             // myLibrary.shift(i); im trying to remove the object from array
             bookDiv.remove(i);
         });
-    //Creat edit icon
+    //Creat edit button and functions
     const editImg = document.createElement("img");
         editImg.setAttribute("id", "editIcon");
         imgTd.appendChild(editImg);
         editImg.src = "https://cdn-icons-png.flaticon.com/512/9794/9794055.png";
-        //Allows 
+        //Allows editing
         editImg.addEventListener("click", function(){
-            //Edits stuff
+            //Opens modal
+            modal.showModal();
+
+            // Populate the form fields with the book's data
+            document.getElementById("author").value = myLibrary[i].author;
+            document.getElementById("title").value = myLibrary[i].title;
+            document.getElementById("pageCount").value = myLibrary[i].pageCount;
+            document.getElementById("haveRead").value = myLibrary[i].haveRead;
+
+             // Update the book in the library when the form is submitted
+            submit.addEventListener("click", function () {
+                myLibrary[i].author = document.getElementById("author").value;
+                myLibrary[i].title = document.getElementById("title").value;
+                myLibrary[i].pageCount = document.getElementById("pageCount").value;
+                myLibrary[i].haveRead = document.getElementById("haveRead").value;
+                // Update the book's data in the table
+            authorP.textContent = myLibrary[i].author;
+            titleP.textContent = myLibrary[i].title;
+            pageCountP.textContent = myLibrary[i].pageCount;
+            haveReadP.textContent = myLibrary[i].haveRead;
+
+            modal.close();
+        });
+
+            // myLibrary.splice(i, 1, myNewBook); //Trying to make this edit button work
+            console.log(myLibrary);
         });
 
 
@@ -93,7 +121,6 @@ function displayLibrary() {//Puts newest library element into text onscreen
     const closeForm = document.getElementById("closeForm");
     const modal = document.querySelector(".modal");
     openForm.addEventListener("click", function(){
-        // document.getElementById("bookSubmit").style.display = "block";
         modal.showModal();
     });
     submit.addEventListener("click", function(){
@@ -101,7 +128,6 @@ function displayLibrary() {//Puts newest library element into text onscreen
         modal.close();
     });
     closeForm.addEventListener("click", function(){
-        // document.getElementById("bookSubmit").style.display = "none";
         modal.close();
     });
 
