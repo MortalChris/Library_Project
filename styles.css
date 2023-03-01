@@ -54,7 +54,7 @@ body{
 
     /*Form*/
     #bookSubmit{
-        color: white;
+        color: var(--btn-hover-clr);
         text-align: center;
         padding: 2rem;
         border-radius: 5rem;
@@ -62,14 +62,18 @@ body{
     .form-input-containers .buttons{
         font-size: 1rem;
     }
+
     /* Have read portion of form */
     #haveRead{
         width: 95%;
     }
-    .form-input{
+    .form-input{/*Form input box*/
         border-radius: 2rem;
         text-align: center;
+        border: .3rem solid var(--primary-clr);
+        color: var(--primary-clr);
     }
+
     /*Form buttons*/
     .buttons{
         color: var(--secondary-clr);
